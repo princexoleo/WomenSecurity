@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorPrimaryDark"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/user_cover_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/secondaryDarkColor"/>
+
+    </LinearLayout>
+
+
+    <com.github.abdularis.civ.CircleImageView
+        android:id="@+id/user_profile_imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/female_pro"
+        app:highlightColor="#80fb1743"
+        app:strokeColor="@color/colorYellow"
+        app:strokeWidth="2px"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+
+
+    <RelativeLayout
+        android:id="@+id/user_info_relative_layout"
+        android:layout_below="@id/user_profile_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/user_name_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saima Afreen "
+            android:textSize="18sp"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/user_location_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dhaka,Bangladesh"
+            android:textSize="18sp"
+            android:textColor="@color/colorWhite"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/user_name_id"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

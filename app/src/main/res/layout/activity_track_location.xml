@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrackLocation">
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/road_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Road: "
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/city_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City :"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/latitude_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latitude :"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/longi_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Longitude:"
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+    <com.subsub.library.BeautyButton
+        android:id="@+id/start_track_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_round_30dp_green"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:text="Start Tracking"
+        android:textColor="@color/colorWhite"
+        app:shadowColor="@color/primaryLightColor"
+        app:shadowPercentHeight="0.7"
+        app:shadowPercentWidth="0.6"
+        app:shadowRadius="30dp"
+        app:shadowYOffset="10"
+        android:visibility="visible"
+
+        android:layout_above="@id/stop_track_btn"
+        android:layout_marginBottom="4dp"/>
+
+    <com.subsub.library.BeautyButton
+        android:id="@+id/stop_track_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_round_30dp_primary"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:text="Stop Tracking"
+        android:textColor="@color/colorWhite"
+        app:shadowColor="@color/primaryLightColor"
+        app:shadowPercentHeight="0.7"
+        app:shadowPercentWidth="0.6"
+        app:shadowRadius="30dp"
+        app:shadowYOffset="10"
+        android:visibility="invisible"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"/>
+
+</RelativeLayout>
