@@ -32,6 +32,7 @@ public class SettingsFragment extends Fragment {
     private Button setMessage;
     private  AlertDialog.Builder builder;
     private EditText nMsg;
+    LayoutInflater inflaterD ;
 
 
     public SettingsFragment() {
@@ -43,7 +44,7 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+         inflaterD = inflater;
         final View rootVie=inflater.inflate(R.layout.fragment_settings, container, false);
 
         init(rootVie);
@@ -70,7 +71,7 @@ public class SettingsFragment extends Fragment {
     }
 
     private void openSetPhoneDialog(View rootVie, final String phone) {
-        nMsg.setHint("Enter New Phone Number");
+       // nMsg.setHint("Enter New Phone Number");
 
 
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
@@ -96,12 +97,12 @@ public class SettingsFragment extends Fragment {
 
     private void openDialog(final View rootview) {
 
-        nMsg.setHint("Enter New Message");
+       // nMsg.setHint("Enter New Message");
 
         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked OK button
-                nMsg=rootview.findViewById(R.id.msg_et);
+
 
                 SharedPreferences.Editor editor = userDetails.edit();
                 editor.putString("userMessage", nMsg.getText().toString());
@@ -126,10 +127,11 @@ public class SettingsFragment extends Fragment {
         userDetails=getActivity().getSharedPreferences("userinfo",Context.MODE_PRIVATE);
 
         builder = new AlertDialog.Builder(getContext());
-        LayoutInflater inflater = getActivity().getLayoutInflater();
+
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.layout_dialog, null));
+        builder.setView(inflaterD.inflate(R.layout.layout_dialog, null));
+        nMsg=rootVie.findViewById(R.id.msg_et);
 
     }
 

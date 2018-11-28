@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
     String DELIVERED="SMS_DELIVERED";
     private String sendingMapsUrl;
     private String sendingMessage;
-    String   custom_message="Hello dears! i'm in danger please help me quickly this my location: ";
+    String   custom_message="Hello !! i'm in danger please help me quickly !!\nthis my location:  ";
     //
     PendingIntent sendPendingIntent,deliveredPendingIntent;
     BroadcastReceiver smsSentReceiver,smsDeliveredReceiver;
@@ -79,6 +79,9 @@ public class HomeFragment extends Fragment {
     EasyAddressUtility addressUtility;
     String roadAdd,cityAdd;
     private Location currentLocation=null;
+    SharedPreferences messagePref;
+
+
 
 
     BeautyButton connectButton,sendButton,startTrackbutton,stopTrackButton;
@@ -190,6 +193,12 @@ public class HomeFragment extends Fragment {
 
         sendPendingIntent=PendingIntent.getBroadcast(getContext(),0,new Intent(SENT),0);
         deliveredPendingIntent=PendingIntent.getBroadcast(getContext(),0,new Intent(DELIVERED),0);
+
+        messagePref=getContext().getSharedPreferences("userinfo",MODE_PRIVATE);
+        SharedPreferences.Editor editor = messagePref.edit();
+        editor.putString("userMessage", custom_message);
+        editor.putString("userPhone", "01911687821");
+        editor.apply();
 
 
 

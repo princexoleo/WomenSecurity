@@ -17,7 +17,6 @@
 
     <LinearLayout
         android:id="@+id/L1"
-        android:layout_below="@id/basic_tv"
         android:layout_marginTop="10dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"

@@ -216,6 +216,7 @@ public class TrackLocation extends AppCompatActivity implements Listener {
             UserPersonalDetails.setCurrentLocation(currentLocation);
             UserPersonalDetails.setMapsUrl(sendingMapsUrl);
 
+
         }
         else {
             //lat lon null

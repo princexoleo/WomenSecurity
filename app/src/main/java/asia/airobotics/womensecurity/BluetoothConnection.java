@@ -71,7 +71,7 @@ public class BluetoothConnection extends AppCompatActivity {
     String DELIVERED="SMS_DELIVERED";
     private String sendingMapsUrl;
     private String sendingMessage;
-    String   custom_message="Hello dears! i'm in danger please help me quickly this my location: ";
+    String   custom_message="Hello !! i'm in danger please help me quickly !!\nthis my location:  ";
     //
     PendingIntent sendPendingIntent,deliveredPendingIntent;
     BroadcastReceiver smsSentReceiver,smsDeliveredReceiver;
