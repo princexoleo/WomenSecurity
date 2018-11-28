@@ -83,6 +83,7 @@ public class BluetoothConnection extends AppCompatActivity {
     private SharedPreferences userPreferences;
     String readMessage="null";
     private String sendPhoneNumber;
+    private String emrMessage;
 
     Button sendbtn;
 
@@ -119,6 +120,8 @@ public class BluetoothConnection extends AppCompatActivity {
         userPreferences=getBaseContext().getSharedPreferences("userinfo",Context.MODE_PRIVATE);
         custom_message+=userPreferences.getString("userMap","");
         sendPhoneNumber=userPreferences.getString("userPhone","");
+        emrMessage=userPreferences.getString("userMessage","");
+        custom_message=emrMessage;
 
         updateUi("nothing rcv yet");
 

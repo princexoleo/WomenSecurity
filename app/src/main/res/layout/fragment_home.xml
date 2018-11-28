@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/transparent_white_hex_1"
-    tools:context=".fragment.HomeFragment">
+    tools:context=".fragment.HomeFragment"
+    android:padding="4dp">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -23,28 +24,38 @@
         <LinearLayout
             android:layout_below="@+id/user_profile_imageView"
             android:id="@+id/linearLayout1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:orientation="vertical"
             android:layout_marginTop="4dp"
             android:layout_marginStart="4dp">
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="16dp">
+          <android.support.v7.widget.CardView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              app:cardCornerRadius="8dp"
+              app:cardElevation="4dp"
+              app:cardMaxElevation="8dp"
+              app:cardUseCompatPadding="true"
+              app:cardBackgroundColor="@color/AppLight">
 
-                <TextView
-                    android:id="@+id/current_location_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Current Location: ..... "
-                    android:textSize="14sp"/>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginStart="16dp">
+
+                  <TextView
+                      android:id="@+id/current_location_tv"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Current Location : ... "
+                      android:textSize="14sp"/>
 
 
-            </LinearLayout>
+              </LinearLayout>
+          </android.support.v7.widget.CardView>
 
         </LinearLayout>
 

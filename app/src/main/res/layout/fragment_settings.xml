@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/primaryLightColor"
+    android:background="@color/bg_gradient_end"
     android:padding="4dp"
     tools:context=".fragment.SettingsFragment">
 
     <!-- TODO: Update blank fragment layout -->
 <RelativeLayout
+    android:padding="4dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -83,7 +84,7 @@
             android:layout_weight="1"
             android:textColor="@color/white"/>
 
-        <EditText
+        <Button
             android:id="@+id/sending_phone_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,16 +113,19 @@
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="GPS Mode"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
+
             <Switch
                 android:id="@+id/gpsSwitch"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:checked="true"
+                />
 
         </LinearLayout>
 
@@ -158,23 +162,15 @@
             android:orientation="vertical">
 
 
-            <TextView
+            <Button
 
+                android:id="@+id/setmsg_button_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Set Custom Message"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
-
-            <EditText
-                android:layout_marginTop="4dp"
-                android:id="@+id/custom_message_et"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/transparent_white_hex_9"
-                android:text="type here..."/>
-
 
         </LinearLayout>
 
