@@ -88,7 +88,6 @@ public class HomeFragment extends Fragment {
 
     //UserInfo
     UserPersonalDetails userinfo;
-
     SharedPreferences userPreferences;
 
 
@@ -127,6 +126,9 @@ public class HomeFragment extends Fragment {
 
        String City=userPreferences.getString("userCity","");
        String Road=userPreferences.getString("userRoad","");
+       custom_message=userPreferences.getString("userMessage","");
+       String map=userPreferences.getString("userMap","");
+       custom_message+=map;
 
         currentLocationTv.setText("Road: "+Road+"\n City: "+City);
 
@@ -151,7 +153,8 @@ public class HomeFragment extends Fragment {
                 }
                 else{
 
-                    String sendingPhoneNumber=userinfo.getEmergency_phoneNumber();
+                    String sendingPhoneNumber=userPreferences.getString("userPhone","");
+                    Log.i(TAG, "onClick: "+sendingPhoneNumber);
 
                     //permission granted
                     SmsManager sms= SmsManager.getDefault();
@@ -195,10 +198,7 @@ public class HomeFragment extends Fragment {
         deliveredPendingIntent=PendingIntent.getBroadcast(getContext(),0,new Intent(DELIVERED),0);
 
         messagePref=getContext().getSharedPreferences("userinfo",MODE_PRIVATE);
-        SharedPreferences.Editor editor = messagePref.edit();
-        editor.putString("userMessage", custom_message);
-        editor.putString("userPhone", "01911687821");
-        editor.apply();
+       
 
 
 
