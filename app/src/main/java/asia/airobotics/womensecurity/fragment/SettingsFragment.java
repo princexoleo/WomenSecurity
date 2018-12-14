@@ -4,6 +4,7 @@ package asia.airobotics.womensecurity.fragment;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,14 +17,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import asia.airobotics.womensecurity.Popup;
 import asia.airobotics.womensecurity.R;
 
 import static android.content.Context.MODE_PRIVATE;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class SettingsFragment extends Fragment {
 
     Button sendingPhoneEt;
@@ -52,71 +52,27 @@ public class SettingsFragment extends Fragment {
         sendingPhoneEt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                phone=sendingPhoneEt.getText().toString();
-                openSetPhoneDialog(rootVie,phone);
+               // openSetPhoneDialog(rootVie,phone);
+                String message ="phone";
+                Intent popIntent = new Intent(getContext(),Popup.class);
+                popIntent.putExtra("EXTRA",message);
+                startActivity(popIntent);
 
             }
         });
         setMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
-                openDialog(rootVie);
+                String message ="message";
+                Intent popIntent = new Intent(getContext(),Popup.class);
+                popIntent.putExtra("EXTRA",message);
+                startActivity(popIntent);
+
+
             }
         });
 
         return rootVie;
-    }
-
-    private void openSetPhoneDialog(View rootVie, final String phone) {
-       // nMsg.setHint("Enter New Phone Number");
-
-
-        builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if(!TextUtils.isEmpty(phone))
-                {
-                    SharedPreferences.Editor editor = userDetails.edit();
-                    editor.putString("userPhone", phone);
-                    editor.apply();
-                    Toast.makeText(getContext(), "Emergency Phone Number Updated", Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        });
-        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User cancelled the dialog
-            }
-        });
-
-    }
-
-    private void openDialog(final View rootview) {
-
-       // nMsg.setHint("Enter New Message");
-
-        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User clicked OK button
-
-
-                SharedPreferences.Editor editor = userDetails.edit();
-                editor.putString("userMessage", nMsg.getText().toString());
-                editor.apply();
-                Toast.makeText(getContext(), "Emergency Message Updated", Toast.LENGTH_SHORT).show();
-            }
-        });
-        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User cancelled the dialog
-            }
-        });
-
-
     }
 
     private void init(View rootVie) {
